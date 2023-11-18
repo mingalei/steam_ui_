@@ -1,0 +1,6 @@
+# Project exclude paths
+/shelf/
+/.idea/workspace.xml
+.gradle
+/.idea
+build/
