@@ -20,8 +20,7 @@ public class Cart extends BaseTest {
 
     public Cart openMainPage() {
         step("Открываем главную страницу Steam", () ->
-                open("https://store.steampowered.com/"));
-
+                open("/?english"));
         return this;
     }
 

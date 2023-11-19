@@ -17,7 +17,7 @@ public class Workshop {
 
     public Workshop openSteamLink() {
         step("Открываем главную страницу Steam", () ->
-                open("https://store.steampowered.com/"));
+                open("/?l=russian"));
         return this;
     }
 

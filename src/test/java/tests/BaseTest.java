@@ -25,7 +25,7 @@ public class BaseTest extends WebProvider{
         value.put("enableVNC", true);
         value.put("enableVideo", true);
         capabilities.setCapability("selenoid:options", value);
-
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         Configuration.browserCapabilities = capabilities;
     }
 

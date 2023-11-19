@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 
 public interface WebConfig extends Config {
     @Key("baseUrl")
-    @DefaultValue("https://store.steampowered.com/")
+    @DefaultValue("https://store.steampowered.com")
     String baseUrl();
 
     @Key("browser")
