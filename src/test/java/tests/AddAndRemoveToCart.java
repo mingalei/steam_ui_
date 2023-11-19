@@ -25,9 +25,9 @@ public class AddAndRemoveToCart extends BaseTest {
                 .addToCart()
                 .gameInCart();
     }
-    @Owner("Mingaleev Aydar")
-    @Epic(value = "Testing of Steam website")
-    @DisplayName("Удаление игры из корзины")
+    //@Owner("Mingaleev Aydar")
+    //@Epic(value = "Testing of Steam website")
+   // @DisplayName("Удаление игры из корзины")
     @Test
     void removeCart() {
         mainPage.openCart()

@@ -6,7 +6,7 @@ plugins {
 group 'guru.qa'
 version '1.0'
 
-def allureVersion = "2.23.0",
+def allureVersion = "2.22.0",
     selenideVersion = "6.16.0",
     jupiterVersion = "5.9.3",
     ownerVersion = "1.0.4",
