@@ -46,5 +46,19 @@ tasks.withType(JavaCompile) {
 
 test {
     useJUnitPlatform()
-    systemProperties(System.getProperties())
+}
+task woskshop_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("workshop")
+    }
+}
+task smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
+    }
+}
+task cart_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("cart")
+    }
 }

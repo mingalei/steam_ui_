@@ -8,8 +8,8 @@ import pages.Cart;
 import pages.LangPanel;
 import utils.Variables;
 
-
-@Tag("steam_ui")
+@Tag("smoke")
+@Tag("cart")
 @Owner("Aydar Mingaleev")
 @Epic(value = "Проверка сайта steam")
 @Feature(value = "Проверка добавления и удаления игры в корзину")
