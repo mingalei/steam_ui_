@@ -44,8 +44,9 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
 task woskshop_test(type: Test) {
     useJUnitPlatform {
