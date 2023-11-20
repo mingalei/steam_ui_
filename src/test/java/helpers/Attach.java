@@ -14,9 +14,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
-
     @Attachment(value = "{attachName}", type = "image/png")
-    public static byte[] screenShotAs(String attachName) {
+    public static byte[] screenshotAs(String attachName) {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
@@ -30,8 +29,11 @@ public class Attach {
         return message;
     }
 
-    public static void browserConsoleLog() {
-        attachAsText("Browser console logs", String.join("\n", Selenide.getWebDriverLogs(BROWSER)));
+    public static void browserConsoleLogs() {
+        attachAsText(
+                "Browser console logs",
+                String.join("\n", Selenide.getWebDriverLogs(BROWSER))
+        );
     }
 
     @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
@@ -42,8 +44,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String selenoidUrl = System.getProperty("selenoidUrl", "selenoid.autotests.cloud");
-        String videoUrl = "https://" + selenoidUrl + "/video/" + sessionId() + ".mp4";
+        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {

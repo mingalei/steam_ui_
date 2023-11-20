@@ -7,7 +7,7 @@ import pages.LangPanel;
 import utils.Variables;
 
 
-public class AddAndRemoveToCart extends BaseTest {
+public class AddAndRemoveToCart extends TestBase {
 
     Cart Cart = new Cart();
     LangPanel ChangeLang = new LangPanel();

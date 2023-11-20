@@ -6,7 +6,7 @@ import pages.LangPanel;
 import pages.Workshop;
 
 
-public class WorkshopCheck extends BaseTest {
+public class WorkshopCheck extends TestBase {
 
     LangPanel ChangeLang = new LangPanel();
     Workshop workshop = new Workshop();

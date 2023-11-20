@@ -2,27 +2,29 @@ package config;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources({
-        "classpath:${environment}.properties"
-})
 
-public interface WebConfig extends Config {
-    @Key("baseUrl")
-    @DefaultValue("https://store.steampowered.com")
-    String baseUrl();
+    public interface WebConfig extends Config {
 
-    @Key("browser")
-    @DefaultValue("CHROME")
-    String browser();
+        @Key("browser")
+        @DefaultValue("CHROME")
+        Browser getBrowser();
 
-    @Key("browserSize")
-    @DefaultValue("1920x1080")
-    String browserSize();
+        @Key("browserVersion")
+        @DefaultValue("100.0")
+        String getBrowserVersion();
 
-    @Key("browserVersion")
-    @DefaultValue("100.0")
-    String browserVersion();
+        @Key("browserSize")
+        @DefaultValue("1920x1080")
+        String getBrowserSize();
 
-    @Key("remoteUrl")
-    String remoteUrl();
-}
+        @Key("baseURL")
+        @DefaultValue("https://store.steampowered.com")
+        String getBaseURL();
+
+        @Key("isRemote")
+        @DefaultValue("false")
+        Boolean isRemote();
+
+        @Key("remoteURL")
+        String getRemoteURL();
+    }

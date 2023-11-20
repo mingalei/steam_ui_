@@ -2,13 +2,13 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import tests.BaseTest;
+import tests.TestBase;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
-public class Cart extends BaseTest {
+public class Cart extends TestBase {
 
 
     SelenideElement
@@ -20,7 +20,7 @@ public class Cart extends BaseTest {
 
     public Cart openMainPage() {
         step("Открываем главную страницу Steam", () ->
-                open("/?english"));
+                open("/?l=english"));
         return this;
     }
 
