@@ -1,20 +1,26 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.Cart;
 import pages.LangPanel;
 import utils.Variables;
 
 
+@Tag("steam_ui")
+@Owner("Aydar Mingaleev")
+@Epic(value = "Проверка сайта steam")
+@Feature(value = "Проверка добавления и удаления игры в корзину")
 public class AddAndRemoveToCart extends TestBase {
 
     Cart Cart = new Cart();
     LangPanel ChangeLang = new LangPanel();
 
-
-    @DisplayName("Добавление игры в корзину")
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Добавление игры в корзину")
     void addToCart() {
         Variables games = new Variables();
         Cart.openMainPage();
@@ -27,10 +33,9 @@ public class AddAndRemoveToCart extends TestBase {
                 .gameInCart();
     }
 
-    //@Owner("Mingaleev Aydar")
-    //@Epic(value = "Testing of Steam website")
-    // @DisplayName("Удаление игры из корзины")
     @Test
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Удаление игры из корзины")
     void removeCart() {
         Variables games = new Variables();
         Cart.openMainPage();
