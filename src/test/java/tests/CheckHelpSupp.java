@@ -1,8 +1,6 @@
 package tests;
 
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
+import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -23,6 +21,7 @@ public class CheckHelpSupp extends TestBase {
     HelpSupport helpSupport = new HelpSupport();
     LangPanel changeLang = new LangPanel();
 
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка раздела 'Я не могу вспонить имя или пароль'")
     @Test
     void hLog() {
@@ -35,6 +34,7 @@ public class CheckHelpSupp extends TestBase {
 
     }
 
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка раздела 'Мой аккаунт украли'")
     @Test
     void hAcc() {
@@ -47,6 +47,7 @@ public class CheckHelpSupp extends TestBase {
 
     }
 
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка раздела 'Письмо с кодом не пришло'")
     @Test
     void hGuard() {
@@ -59,6 +60,7 @@ public class CheckHelpSupp extends TestBase {
 
     }
 
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Проверка раздела 'Мобильный аутентификатор удалён или утерян'")
     @Test
     void hAuth() {
