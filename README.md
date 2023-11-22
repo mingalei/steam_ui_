@@ -1,4 +1,4 @@
-# Проект по автоматизации тестовых сценариев для сайта [Steam](https://store.steampowered.com)
+# Проект по автоматизации тестовых сценариев для сайта  [Steam](https://store.steampowered.com)
 <p align="center"><a href="https://store.steampowered.com/"><img src="images/logo/steam.jpg" align="center" width="600" height="300"  alt="Java"/></a></p>  
 
 > Steam - олнлайн-сервис цифрового распространения компьютерных игр и программ, разработанный и поддерживаемый компанией Valve.  
