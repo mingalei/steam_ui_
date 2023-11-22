@@ -11,14 +11,12 @@ public class LangPanel {
             langRu = $x("//a[contains(@class,'tight') and text()='Русский (Russian)']");
 
     public LangPanel languagePanel() {
-        step("", () ->
-                langPanel.click());
+                langPanel.click();
         return this;
     }
 
     public LangPanel langChangeRu() {
-        step("", () ->
-                langRu.click());
+                langRu.click();
         return this;
     }
 

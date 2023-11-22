@@ -15,7 +15,7 @@ public class Workshop {
             aboutWorkshop = $x("//span[contains(text(),'О мастерской')]");
 
     public Workshop openSteamLinkRu() {
-        open("/?l=english");
+        open("/?l=russian");
         return this;
     }
     public Workshop openSteamLinkEn() {
