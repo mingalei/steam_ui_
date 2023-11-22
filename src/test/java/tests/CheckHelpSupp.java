@@ -26,7 +26,7 @@ public class CheckHelpSupp extends TestBase {
     @DisplayName("Проверка раздела 'Я не могу вспонить имя или пароль'")
     @Test
     void hLog() {
-        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkRu());
+        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkEn());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Переходим в рездел Поддержка", () -> helpSupport.hMainSupp());
@@ -38,7 +38,7 @@ public class CheckHelpSupp extends TestBase {
     @DisplayName("Проверка раздела 'Мой аккаунт украли'")
     @Test
     void hAcc() {
-        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkRu());
+        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkEn());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Переходим в рездел Поддержка", () -> helpSupport.hMainSupp());
@@ -50,7 +50,7 @@ public class CheckHelpSupp extends TestBase {
     @DisplayName("Проверка раздела 'Письмо с кодом не пришло'")
     @Test
     void hGuard() {
-        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkRu());
+        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkEn());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Переходим в рездел Поддержка", () -> helpSupport.hMainSupp());
@@ -62,7 +62,7 @@ public class CheckHelpSupp extends TestBase {
     @DisplayName("Проверка раздела 'Мобильный аутентификатор удалён или утерян'")
     @Test
     void hAuth() {
-        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkRu());
+        step("Открываем главную страницу Steam", () -> workshop.openSteamLinkEn());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Переходим в рездел Поддержка", () -> helpSupport.hMainSupp());
