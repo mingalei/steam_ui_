@@ -25,7 +25,7 @@ public class WorkshopCheck extends TestBase {
     @DisplayName("Проверка мастерской Steam")
     @Test
     void workShopCheck() {
-        step("Переходим на главную страницу Steam", () -> workshop.openSteamLink());
+        step("Переходим на главную страницу Steam", () -> workshop.openSteamLinkEn());
         step("Переходим во вкладку Сообщество", () -> workshop.communityEl());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu()); //Смена локализации для выбора нужного элемента

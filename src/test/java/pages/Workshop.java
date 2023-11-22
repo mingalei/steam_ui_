@@ -14,7 +14,11 @@ public class Workshop {
             lastNews = $(".mainSectionHeader"),
             aboutWorkshop = $x("//span[contains(text(),'О мастерской')]");
 
-    public Workshop openSteamLink() {
+    public Workshop openSteamLinkRu() {
+        open("/?l=english");
+        return this;
+    }
+    public Workshop openSteamLinkEn() {
         open("/?l=english");
         return this;
     }
