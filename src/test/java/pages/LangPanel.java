@@ -8,15 +8,15 @@ import static com.codeborne.selenide.logevents.SelenideLogger.step;
 public class LangPanel {
     SelenideElement
             langPanel = $("#language_pulldown"),
-            langRu = $x(".//a[contains(@class,'tight') and text()='Русский (Russian)']");
+            langRu = $x("//a[contains(@class,'tight') and text()='Русский (Russian)']");
 
-    public  LangPanel languagePanel() {
+    public LangPanel languagePanel() {
         step("", () ->
                 langPanel.click());
         return this;
     }
 
-    public  LangPanel langChangeRu() {
+    public LangPanel langChangeRu() {
         step("", () ->
                 langRu.click());
         return this;

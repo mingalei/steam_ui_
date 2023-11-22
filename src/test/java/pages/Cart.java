@@ -19,22 +19,12 @@ public class Cart extends TestBase {
 
 
     public Cart openMainPage() {
-        step("Открываем главную страницу Steam", () ->
-                open("/?l=english"));
-        return this;
-    }
-
-    public Cart openCart() {
-        step("Открываем главную страницу Steam", () ->
-                open("https://store.steampowered.com/cart/"));
-
+        open("/?l=english");
         return this;
     }
 
     public Cart marketSearch() {
-        step("", () ->
-                marketSearch.click());
-
+                marketSearch.click();
         return this;
     }
 
@@ -50,28 +40,22 @@ public class Cart extends TestBase {
     }
 
     public Cart addToCart() {
-        step("Добавляем игру в корзину", () ->
-                addToCart.click());
+        addToCart.click();
         return this;
     }
 
     public Cart gameInCart() {
-        step("Проверка, что игра была добавлена в корзину", () ->
-                gameInCart.shouldHave(Condition.text("Ваш товар был добавлен")));
-
+        gameInCart.shouldHave(Condition.text("Ваш товар был добавлен"));
         return this;
     }
 
-    public Cart removeGameCart(){
-        step("Удаляем игры из корзины", () ->
-        removeGameCart.click());
-
+    public Cart removeGameCart() {
+        removeGameCart.click();
         return this;
     }
-    public Cart removeCheck(){
-        step("Проверяем, что товар удалён", () ->
-                gameInCart.shouldHave(Condition.text("Ваш товар был удалён!")));
 
+    public Cart removeCheck() {
+        gameInCart.shouldHave(Condition.text("Ваш товар был удалён!"));
         return this;
     }
 

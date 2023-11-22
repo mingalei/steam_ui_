@@ -8,6 +8,8 @@ import pages.Cart;
 import pages.LangPanel;
 import utils.Variables;
 
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
+
 @Tag("smoke")
 @Tag("cart")
 @Owner("Aydar Mingaleev")
@@ -15,39 +17,40 @@ import utils.Variables;
 @Feature(value = "Проверка добавления и удаления игры в корзину")
 public class AddAndRemoveToCart extends TestBase {
 
-    Cart Cart = new Cart();
-    LangPanel ChangeLang = new LangPanel();
+    Cart cart = new Cart();
+    LangPanel changeLang = new LangPanel();
+
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Добавление игры в корзину")
+    @DisplayName("Добавление игру в корзину")
     void addToCart() {
         Variables games = new Variables();
-        Cart.openMainPage();
-        ChangeLang.languagePanel()
-                .langChangeRu();
-        Cart.marketSearch()
-                .setGame(games.setGame)
-                .selectGame(games.setGame)
-                .addToCart()
-                .gameInCart();
+        step("Открываем главную страницу Steam", () -> cart.openMainPage());
+        step("Меняем локализацию сайта", () -> changeLang.languagePanel()
+                .langChangeRu());
+        step("Вводим игру в поиск", () -> cart.marketSearch()
+                .setGame(games.setGame));
+        cart.selectGame(games.setGame);
+        step("Добавляем игру в корзину", () -> cart.addToCart());
+        step("Проверяем, что игра была добавлена в корзину", () -> cart.gameInCart());
+        step("Удаляем игру из корзины", () -> cart.removeGameCart());
+        step("Проверяем, что игра была удалена из корзины", () -> cart.removeCheck());
     }
 
     @Test
-    @Severity(SeverityLevel.CRITICAL)
-    @DisplayName("Удаление игры из корзины")
-    void removeCart() {
+    @DisplayName("Удаление игры в козрзину после добавления")
+    void removeFromCart() {
         Variables games = new Variables();
-        Cart.openMainPage();
-        ChangeLang.languagePanel()
-                .langChangeRu();
-        Cart.marketSearch()
-                .setGame(games.setGame)
-                .selectGame(games.setGame)
-                .addToCart()
-                .gameInCart();
-        Cart.openCart()
-                .removeGameCart()
-                .removeCheck();
+        step("Открываем главную страницу Steam", () -> cart.openMainPage());
+        step("Меняем локализацию сайта", () -> changeLang.languagePanel()
+                .langChangeRu());
+        step("Вводим игру в поиск", () -> cart.marketSearch()
+                .setGame(games.setGame));
+        cart.selectGame(games.setGame);
+        step("Добавляем игру в корзину", () -> cart.addToCart());
+        step("Проверяем, что игра была добавлена в корзину", () -> cart.gameInCart());
+        step("Удаляем игру из корзины", () -> cart.removeGameCart());
+        step("Проверяем, что игра была удалена из корзины", () -> cart.removeCheck());
     }
 }

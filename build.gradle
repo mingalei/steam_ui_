@@ -63,3 +63,8 @@ task cart_test(type: Test) {
         includeTags("cart")
     }
 }
+task helpSupport_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("helpsupport")
+    }
+}

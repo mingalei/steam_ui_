@@ -9,29 +9,30 @@ import org.junit.jupiter.api.Test;
 import pages.LangPanel;
 import pages.Workshop;
 
+import static com.codeborne.selenide.logevents.SelenideLogger.step;
+
 
 @Tag("smoke")
 @Tag("workshop")
 @Owner("Aydar Mingaleev")
 @Epic(value = "Проверка сайта steam")
-@Feature(value = "Проверка добавления и удаления игры в корзину")
+@Feature(value = "Проверка перехода в матсерскую")
 public class WorkshopCheck extends TestBase {
 
-    LangPanel ChangeLang = new LangPanel();
+    LangPanel changeLang = new LangPanel();
     Workshop workshop = new Workshop();
 
-    @DisplayName("Проверка наличия мастерской Steam")
+    @DisplayName("Проверка мастерской Steam")
     @Test
     void workShopCheck() {
-
-        workshop.openSteamLink()
-                .communityEl();
-        ChangeLang.languagePanel()
-                .langChangeRu();
-        workshop.workshopSel()
-                .workshopAll()
-                .checkNews()
-                .aboutWork()
-                .insrtuct();
+        step("Переходим на главную страницу Steam", () -> workshop.openSteamLink());
+        step("Переходим во вкладку Сообщество", () -> workshop.communityEl());
+        step("Меняем локализацию сайта", () -> changeLang.languagePanel()
+                .langChangeRu()); //Смена локализации для выбора нужного элемента
+        step("Переходи во вкладку Мастерская", () -> workshop.workshopSel());
+        step("Открываем все доступные мастерские", () -> workshop.workshopAll());
+        step("Проверяем наличие заголовка 'Последние новости мастеркой'", () -> workshop.checkNews());
+        step("Открываем вкладку 'О мастерской'", () -> workshop.aboutWork());
+        step("Проверяем наличие необходимого текста", () -> workshop.insrtuct());
     }
 }
