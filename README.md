@@ -55,7 +55,7 @@
 
 ---
 
-## <img src="images/logo/Jenkins.svg" width="50" height="50"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/tinkoff_autotests_kpoludnitsyn_new/)
+## <img src="images/logo/Jenkins.svg" width="50" height="50"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/021-mingalei-diplomUI/)
 
 <p align="center">
 <img src="images/screenshots/JenkinsPage.jpg" alt="Jenkins Page" width="1000" height="350">
