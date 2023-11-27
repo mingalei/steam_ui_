@@ -24,7 +24,7 @@ public class WorkshopCheck extends TestBase {
 
     @DisplayName("Проверка наличия заголовка 'Последние новости мастеркой' в главной странице мастерской")
     @Test
-    void WorskopTitleCheckTest() {
+    void WorkshopTitleCheckTest() {
         step("Переходим на главную страницу Steam", () -> workshop.openSteamLinkRu());
         step("Переходим во вкладку Сообщество", () -> workshop.communityElSelect());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
