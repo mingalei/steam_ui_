@@ -23,32 +23,32 @@ public class Workshop {
         return this;
     }
 
-    public Workshop communityEl() {
+    public Workshop communityElSelect() {
         community.click();
         return this;
     }
 
-    public Workshop workshopSel() {
+    public Workshop workshopSelect() {
         workshopSelect.click();
         return this;
     }
 
-    public Workshop workshopAll() {
+    public Workshop openWorkshopAll() {
         workshopThis.click();
         return this;
     }
 
-    public Workshop checkNews() {
+    public Workshop newsPageCheck() {
         lastNews.shouldHave(Condition.text("ПОСЛЕДНИЕ НОВОСТИ МАСТЕРСКОЙ"));
         return this;
     }
 
-    public Workshop aboutWork() {
+    public Workshop aboutWorkSelct() {
         aboutWorkshop.click();
         return this;
     }
 
-    public Workshop insrtuct() {
+    public Workshop insrtuctPageCheck() {
         instuctions.shouldHave(Condition.text("Как это работает"));
         return this;
     }

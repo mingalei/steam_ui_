@@ -18,36 +18,36 @@ public class HelpSupport {
             helpPageTitle = $(".help_page_title");
 
 
-    public HelpSupport hLog() {
+    public HelpSupport helpLoginCheck() {
         helpLogin.click();
         helpPageTitle.shouldHave(Condition.text("Я не могу вспомнить имя (логин) или пароль моего аккаунта Steam"));
         return this;
     }
 
-    public HelpSupport hAccount() {
+    public HelpSupport helpAccountCheck() {
         helpAcc.click();
         helpPageTitle.shouldHave(Condition.text("Что делать, если аккаунт Steam был похищен?"));
         return this;
     }
 
-    public HelpSupport hGuard() {
+    public HelpSupport helpSupportCheck() {
         helpGuard.click();
         helpPageTitle.shouldHave(Condition.text("Что делать, если письмо с кодом Steam Guard не пришло, но Steam его запрашивает?"));
         return this;
     }
 
-    public HelpSupport hMobAuth() {
+    public HelpSupport helpMobileAuthCheck() {
         helpMobAuth.click();
         helpPageTitle.shouldHave(Condition.text("Мой мобильный аутентификатор Steam был удален или утерян"));
         return this;
     }
 
-    public HelpSupport hMainSupp() {
+    public HelpSupport helpMainPageSelect() {
         mainSupport.click();
         return this;
     }
 
-    public HelpSupport hSupport() {
+    public HelpSupport helpSuppSelect() {
         helpSupp.click();
         return this;
     }

@@ -5,8 +5,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.Cart;
-import pages.LangPanel;
-import utils.Variables;
+import pages.components.LangPanel;
+import data.TestData;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
@@ -24,14 +24,14 @@ public class AddAndRemoveToCart extends TestBase {
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Добавление игру в корзину")
-    void addToCart() {
-        Variables games = new Variables();
+    void addToCartTest() {
+        TestData testData = new TestData();
         step("Открываем главную страницу Steam", () -> cart.openMainPage());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Вводим игру в поиск", () -> cart.marketSearch()
-                .setGame(games.setGame));
-        cart.selectGame(games.setGame);
+                .setGame(testData.setGame));
+        cart.selectGame(testData.setGame);
         step("Добавляем игру в корзину", () -> cart.addToCart());
         step("Проверяем, что игра была добавлена в корзину", () -> cart.gameInCart());
         step("Удаляем игру из корзины", () -> cart.removeGameCart());
@@ -40,14 +40,14 @@ public class AddAndRemoveToCart extends TestBase {
 
     @Test
     @DisplayName("Удаление игры в козрзину после добавления")
-    void removeFromCart() {
-        Variables games = new Variables();
+    void removeFromCartTest() {
+        TestData testData = new TestData();
         step("Открываем главную страницу Steam", () -> cart.openMainPage());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
                 .langChangeRu());
         step("Вводим игру в поиск", () -> cart.marketSearch()
-                .setGame(games.setGame));
-        cart.selectGame(games.setGame);
+                .setGame(testData.setGame));
+        cart.selectGame(testData.setGame);
         step("Добавляем игру в корзину", () -> cart.addToCart());
         step("Проверяем, что игра была добавлена в корзину", () -> cart.gameInCart());
         step("Удаляем игру из корзины", () -> cart.removeGameCart());
