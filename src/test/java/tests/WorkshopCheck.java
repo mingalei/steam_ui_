@@ -16,15 +16,27 @@ import static com.codeborne.selenide.logevents.SelenideLogger.step;
 @Tag("workshop")
 @Owner("Aydar Mingaleev")
 @Epic(value = "Проверка сайта steam")
-@Feature(value = "Проверка перехода в матсерскую")
+@Feature(value = "Проверка наличия мастерской, нужного заголовка")
 public class WorkshopCheck extends TestBase {
 
     LangPanel changeLang = new LangPanel();
     Workshop workshop = new Workshop();
 
-    @DisplayName("Проверка мастерской Steam")
+    @DisplayName("Проверка наличия заголовка 'Последние новости мастеркой' в главной странице мастерской")
     @Test
-    void workShopCheck() {
+    void WorskopTitleCheckTest() {
+        step("Переходим на главную страницу Steam", () -> workshop.openSteamLinkRu());
+        step("Переходим во вкладку Сообщество", () -> workshop.communityElSelect());
+        step("Меняем локализацию сайта", () -> changeLang.languagePanel()
+                .langChangeRu()); //Смена локализации для выбора нужного элемента
+        step("Переходи во вкладку Мастерская", () -> workshop.workshopSelect());
+        step("Открываем все доступные мастерские", () -> workshop.openWorkshopAll());
+        step("Проверяем наличие заголовка 'Последние новости мастеркой'", () -> workshop.newsPageCheck());
+    }
+
+    @DisplayName("Проверка наличия заголовка во вкладке 'О мастерской'")
+    @Test
+    void AboutWorkshopTest() {
         step("Переходим на главную страницу Steam", () -> workshop.openSteamLinkRu());
         step("Переходим во вкладку Сообщество", () -> workshop.communityElSelect());
         step("Меняем локализацию сайта", () -> changeLang.languagePanel()
@@ -35,4 +47,5 @@ public class WorkshopCheck extends TestBase {
         step("Открываем вкладку 'О мастерской'", () -> workshop.aboutWorkSelct());
         step("Проверяем наличие необходимого текста", () -> workshop.insrtuctPageCheck());
     }
+
 }
